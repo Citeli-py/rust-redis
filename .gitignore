@@ -1,2 +1,2 @@
-rust-redis-server/target
-rust-redis-client/target
+rust-redis-server/target/
+rust-redis-client/target/
