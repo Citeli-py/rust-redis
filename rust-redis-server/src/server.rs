@@ -50,6 +50,7 @@ impl Server {
                     "GET" => self.database.get(chave).unwrap_or("Chave não encontrada".to_string()),
                     "SET" => {
                         self.database.set(chave, valor);
+                        self.database.save();
                         "Valor setado".to_string()
                     },
                     _ => "Erro".to_string(),
