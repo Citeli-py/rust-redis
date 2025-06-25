@@ -5,7 +5,7 @@ use crate::key_value_db::KeyValueDB;
 
 pub struct Server {
     listener: TcpListener,
-    port: u16,
+    //port: u16,
     database: KeyValueDB,
 }
 
@@ -17,7 +17,7 @@ impl Server {
 
         Server {
             listener,
-            port,
+            //port,
             database: KeyValueDB::new(),
         }
     }
@@ -50,7 +50,9 @@ impl Server {
                     "GET" => self.database.get(chave).unwrap_or("Chave não encontrada".to_string()),
                     "SET" => {
                         self.database.set(chave, valor);
-                        self.database.save();
+                        if self.database.save().is_err() {
+                            println!("Erro ao salvar o banco de dados!");
+                        };
                         "Valor setado".to_string()
                     },
                     _ => "Erro".to_string(),
