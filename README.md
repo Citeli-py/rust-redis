@@ -22,8 +22,8 @@ Projeto educacional que implementa um **servidor de chave-valor estilo Redis** c
 ### 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/rust-redis-clone.git
-cd rust-redis-clone
+git clone https://github.com/Citeli-py/rust-redis.git
+cd rust-redis
 ```
 
 ### 2. Inicie o servidor
